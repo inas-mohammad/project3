@@ -21,17 +21,15 @@ bcrypt.hash(password, salt, (err, hash) => {
   });
   const jwt = require("jsonwebtoken");
 
-// getting environment variables
+
 const SECRET = process.env.SECRET;
 const TOKEN_EXPIRATION = process.env.TOKEN_EXPIRATION;
 
-// generating a new token
+
 const generateToken = () => {
-  // the payload that will be sent to the client-side
+  
   const payload = {
-    id: 1,
-    permissions: ["r", "w"],
-    type: "user",
+   
   };
 
   const options = {
@@ -41,9 +39,33 @@ const generateToken = () => {
 };
 
 const authenticateToken = (token) => {
-  // verifying the token by using the secret key
+
   const parsedToken = jwt.verify(token, SECRET);
-  // checking if the information in the parsed token exist in the database
+  
+
+  app.post('/video', (req, res) => {
+    console.log('12 => POST /video');
+    console.log('REQ.Body: ', req.body);
+    const newvideo = { email: req.body.newEmail, userName:req.body.newUserName , passWord:req.body.newPassWord };
+    data.push(newVideo);
+  ​
+   
+    res.json(
+      `the number of video after adding new user are ${data.length}`
+    );
+  });
+  
+  app.get('/video', (req, res) => {
+    console.log('23 => GET /video');
+    res.send(data);
+  });
+  
+  \
+  app.delete('/veideo/first', (req, res) => {
+    console.log('24 =>  DELETE /students/first');
+    data.shift();
+    
+  });
 }
 const port =3000
 app.listen(port, () => {
