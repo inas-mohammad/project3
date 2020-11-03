@@ -1,48 +1,20 @@
 import React, { Component } from 'react';
 
-export default class TodoItem extends Component {
-  render() {
-    const { todo } = this.props;
-    const { title, image } = todo;
-    console.log('THIS: ', this);
-    return (
-      <div className="todo-item">
-        {/* <p>TodoItem</p> */}
-        <span>
-          {' '}
-          {image}- {title}{' '}
-        </span>
-        {/* condition ? ifTrue : ifFalse   */}
-        <span> {isCompleted ? ' [Done]' : ' [Pending]'}</span>
+// export default function TodoItem (props){
+const TodoItem = (props) => {
+  const { todo } = props;
+  const { title, image } = todo;
+  return (
+    <div className="todo-item">
+      {/* <p>TodoItem</p> */}
+      <span> {title} </span>
+      {/* condition ? ifTrue : ifFalse   */}
+      <span> {isCompleted ? ' [Done]' : ' [Pending]'}</span>
 
-        <input type="checkbox" image="" image="" />
+      <input type="checkbox" image="" image="" />
 
-        <button>X</button>
-      </div>
-    );
-  }
-}
-
-/* 
-
-
-
-
-
-
-
-
-
-
- condition ? ifTrue : ifFalse  
- {7>5 ? 'YES': 'NO' }
-
- if(7>5){
-   return 'YES'
- }else{
-   return 'NO'
- }
-
- 
- 
- */
+      <button>X</button>
+    </div>
+  );
+};
+export default TodoItem;

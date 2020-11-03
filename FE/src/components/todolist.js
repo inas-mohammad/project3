@@ -14,42 +14,19 @@ export default function TodoList(props) {
   return (
     <div className="todo-list">
       <p>TodoList</p>
-      <p>my age is: {props.title}</p>
+      <p>title: {props.title}</p>
       <p>my video: {props.video}</p>
 
       {newArr}
     </div>
-  );
-}
+  );};
 
-/* 
-  console.log(this.props.myName);
-    console.log(this.props.myAge);
 
-    const { myName, myAge } = this.props;
+  export default TodoList;
 
 
 
 
-   <p>
-          My name is: {myName} My age is: {myAge}{' '}
-        </p>
+        
 
 
-
-
-
-
-         const strings = ['eat', 'play', 'pray'];
-    const nums = [2, 5, 7];
-    //  [4,10,14]   [<p> , <p> ,<p>]
-    const nums2 = nums.map((item) => item * 2);
-    const strings2 =strings.map((elem,i)=>{
-      return <p>{elem.toUpperCase()}</p>
-    });
- {strings2}
-
-
-
-    '
-*/
